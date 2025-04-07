@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrate Nossos Serviços</title>
+    <link rel="stylesheet" href="css/contratar.css">
+</head>
+<body>
+    <section class="formulario-contratacao">
+        <div class="container">
+            <h2>Contrate Nosso Serviço</h2>
+            
+            <div class="progress-bar">
+                <div class="progress-step active" data-step="1">1</div>
+                <div class="progress-step" data-step="2">2</div>
+                <div class="progress-step" data-step="3">3</div>
+            </div>
+            
+            <form id="contratoForm">
+                <div class="form-step active" id="step1">
+                    <h3>Qual serviço você precisa?</h3>
+                    <select name="servico" required>
+                        <option value="">Selecione um serviço...</option>
+                        <option value="abertura">Abertura de CNPJ (R$ 299,00)</option>
+                        <option value="baixa">Baixa de CNPJ (R$ 349,00)</option>
+                        <option value="regularizacao">Regularização de Débitos (Sob consulta)</option>
+                        <option value="alteracao">Alteração Cadastral (R$ 199,00)</option>
+                    </select>
+                    <button type="button" class="btn next-step">Próximo →</button>
+                </div>
+                <div class="form-step" id="step2">
+                    <h3>Seus Dados Pessoais</h3>
+                    <input type="text" name="nome" placeholder="Nome completo*" required>
+                    <input type="text" name="cpf" placeholder="CPF*" required oninput="formatCPF(this)">
+                    <input type="email" name="email" placeholder="E-mail*" required>
+                    <input type="tel" name="telefone" placeholder="Telefone/WhatsApp*" required oninput="formatPhone(this)">
+                    <div class="form-navigation">
+                        <button type="button" class="btn prev-step">← Voltar</button>
+                        <button type="button" class="btn next-step">Próximo →</button>
+                    </div>
+                </div>
+                <div class="form-step" id="step3">
+                    <h3>Documentos Necessários</h3>
+                    <p style="margin-bottom: 20px;">Por favor, envie os documentos solicitados para dar continuidade ao processo:</p>
+                    
+                    <div style="margin-bottom: 25px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: bold;">CPF (PDF ou imagem)</label>
+                        <input type="file" accept=".pdf,.jpg,.jpeg,.png" required>
+                    </div>
+                    
+                    <div style="margin-bottom: 25px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: bold;">RG ou CNH (PDF ou imagem)</label>
+                        <input type="file" accept=".pdf,.jpg,.jpeg,.png" required>
+                    </div>
+                    
+                    <div style="margin-bottom: 25px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: bold;">Comprovante de Endereço</label>
+                        <input type="file" accept=".pdf,.jpg,.jpeg,.png" required>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn prev-step">← Voltar</button>
+                        <button type="submit" class="btn next-step">Enviar Solicitação</button>
+                    </div>
+                </div>
+                <div class="form-confirmation" id="confirmation">
+                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Sucesso">
+                    <h3>Solicitação Enviada!</h3>
+                    <p>Recebemos seus dados e documentos. Nossa equipe entrará em contato em até 24h úteis para confirmar os detalhes.</p>
+                    <p style="margin-top: 15px;"><strong>Obrigado por escolher nossos serviços!</strong></p>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="js/contratar.js"></script>
+</body>
+</html>

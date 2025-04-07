@@ -1,0 +1,222 @@
+:root {
+    --verde-primario: #2E8B57;
+    --verde-claro: #3CB371;
+    --amarelo: #FFD700;
+    --branco: #FFFFFF;
+    --cinza-escuro: #2F4F4F;
+    --cinza-claro: #F8F9FA;
+    --cinza-borda: #DDDDDD;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--cinza-claro);
+    color: var(--cinza-escuro);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: var(--verde-primario);
+    position: relative;
+}
+
+h2:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--amarelo);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.formulario-contratacao {
+    background: var(--branco);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+}
+
+.form-step {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.form-step.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    color: var(--verde-primario);
+    text-align: center;
+}
+
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.progress-bar:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--cinza-borda);
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.progress-step {
+    width: 40px;
+    height: 40px;
+    background: var(--cinza-borda);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--branco);
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.progress-step.active {
+    background: var(--verde-primario);
+    transform: scale(1.1);
+}
+
+.progress-step.completed {
+    background: var(--amarelo);
+    color: var(--cinza-escuro);
+}
+
+select, input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid var(--cinza-borda);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: var(--verde-primario);
+    box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.2);
+}
+
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232E8B57' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 15px;
+}
+
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn.next-step {
+    background: var(--verde-primario);
+    color: var(--branco);
+    margin-left: auto;
+}
+
+.btn.prev-step {
+    background: var(--branco);
+    color: var(--verde-primario);
+    border: 1px solid var(--verde-primario);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn.next-step:hover {
+    background: var(--verde-claro);
+}
+
+.btn.prev-step:hover {
+    background: var(--cinza-claro);
+}
+
+.form-confirmation {
+    text-align: center;
+    display: none;
+}
+
+.form-confirmation img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.form-confirmation h3 {
+    color: var(--verde-primario);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 0;
+    }
+    
+    .formulario-contratacao {
+        padding: 25px;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+    }
+}

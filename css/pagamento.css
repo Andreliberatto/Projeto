@@ -1,0 +1,156 @@
+:root {
+    --verde-primario: #2E8B57;
+    --verde-claro: #3CB371;
+    --amarelo: #FFD700;
+    --branco: #FFFFFF;
+    --cinza-escuro: #2F4F4F;
+    --cinza-claro: #F8F9FA;
+    --cinza-borda: #DDDDDD;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--cinza-claro);
+    color: var(--cinza-escuro);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--verde-primario);
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--amarelo);
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--verde-primario);
+}
+
+.checkout {
+    background: var(--branco);
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    padding: 40px;
+}
+
+.resumo-pedido {
+    background: var(--cinza-claro);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid var(--cinza-borda);
+}
+
+.resumo-pedido p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.resumo-pedido span {
+    font-weight: bold;
+    color: var(--verde-primario);
+}
+
+.metodos-pagamento {
+    margin-top: 40px;
+}
+
+.payment-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.payment-method {
+    flex: 1;
+    padding: 12px;
+    background: var(--branco);
+    border: 2px solid var(--cinza-borda);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.payment-method.active {
+    border-color: var(--verde-primario);
+    background: rgba(46, 139, 87, 0.1);
+    color: var(--verde-primario);
+}
+
+.payment-method:hover:not(.active) {
+    border-color: var(--verde-claro);
+}
+
+.payment-icon {
+    width: 24px;
+    height: 24px;
+}
+
+#payment-form {
+    margin-top: 20px;
+}
+
+.secure-payment {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.secure-payment img {
+    height: 30px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    
+    .checkout {
+        padding: 25px;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    .payment-options {
+        flex-direction: column;
+    }
+}

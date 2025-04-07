@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Pagamento | MEI Simples</title>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <link rel="stylesheet" href="css/pagamento.css">
+</head>
+<body>
+    <section class="checkout">
+        <div class="container">
+            <div class="resumo-compra">
+                <h2>Resumo da Compra</h2>
+                
+                <div class="resumo-pedido">
+                    <h3>Seu Pedido</h3>
+                    <p>Serviço: <span id="servico-nome">Abertura de CNPJ</span></p>
+                    <p>Valor: <span id="servico-valor">R$ 299,00</span></p>
+                    <p>Forma de pagamento: <span id="metodo-selecionado">Pix</span></p>
+                </div>
+                
+                <div class="beneficios">
+                    <h3>Vantagens do Nosso Serviço</h3>
+                    <ul style="list-style-type: none;">
+                        <li style="margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px;">
+                            <span style="color: var(--verde-primario); font-weight: bold;">✓</span>
+                            <span>Processo 100% online e seguro</span>
+                        </li>
+                        <li style="margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px;">
+                            <span style="color: var(--verde-primario); font-weight: bold;">✓</span>
+                            <span>CNPJ liberado em até 7 dias úteis</span>
+                        </li>
+                        <li style="margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px;">
+                            <span style="color: var(--verde-primario); font-weight: bold;">✓</span>
+                            <span>Suporte especializado durante todo o processo</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="atendimento" style="margin-top: 30px;">
+                    <h3>Precisa de ajuda?</h3>
+                    <p style="margin-bottom: 15px;">Nossa equipe está pronta para te ajudar!</p>
+                    <a href="https://wa.me/5511999999999" style="display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" style="width: 20px; height: 20px;">
+                        Falar no WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="pagamento">
+                <h2>Finalizar Pagamento</h2>
+                
+                <div class="metodos-pagamento">
+                    <h3>Método de Pagamento</h3>
+                    
+                    <div class="payment-options">
+                        <button class="payment-method active" data-method="pix">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2489/2489070.png" alt="Pix" class="payment-icon">
+                            Pix
+                        </button>
+                        <button class="payment-method" data-method="boleto">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2489/2489143.png" alt="Boleto" class="payment-icon">
+                            Boleto
+                        </button>
+                        <button class="payment-method" data-method="cartao">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2489/2489137.png" alt="Cartão" class="payment-icon">
+                            Cartão
+                        </button>
+                    </div>
+                    
+                    <div id="payment-form"></div>
+                    
+                    <div class="secure-payment">
+                        <img src="https://http2.mlstatic.com/frontend-assets/vpp-frontend/security-logo.svg" alt="Segurança">
+                        <span>Pagamento 100% seguro via Mercado Pago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/pagamento.js"></script>
+</body>
+</html>
